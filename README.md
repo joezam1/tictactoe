@@ -1,3 +1,145 @@
+# The Project
+
+The Slackbot Project contains 4 files in the Script folder
+
+Files
+dates.js
+chatmessages.js
+rockpaperscissors.js
+tictactoe.js
+
+
+
+File dates.js
+*****************************
+Functionality
+The iRobot slackbot responds to user input by responding
+to the user about dates, which day is today, which one
+is the next holiday, which day of the week  is today etc.
+
+Slackbot Commands
+
+=> date is today : indicates the current date
+=> day is today : indicates which day of the week is today
+=> next holiday : indicates which one is the next
+                  australian holiday
+=> remaining holidays : indicates all the pending
+                        australian holidays until the
+                        end of the year
+
+Approach taken
+All the holidays have been stored in an object and the
+week days have been stored in an array in order to
+iterate and retrieve the corresponding item
+
+
+
+
+
+File chatmessages.js
+*******************************
+
+Functionality
+the iRobot slackbot sends messages to the other people in
+the js2syd channel individually or as a group
+
+Slackbot Commands
+
+=> people channel : Indicates how many people are in the channel
+=> message types : Indicates the two types of messages
+                   iRobot can send
+=> individual message : Indicates how the message needs to
+                       be formatted in order to be successfully
+                       sent
+=> group messages : Indicates how the message needs to
+                      be formatted in order to be
+                      successfully sent
+
+=> msg @xxxxx : message : Sends an individual message
+=> message to @xxxx : message : Sends a group message
+
+
+=> Approach taken
+all the users in the Channel have been stored in an array
+in order to be used to select the input users for messaging
+
+
+
+File rockpaperscissors.js
+***************************************
+Functionality
+The iRobot slackbot can play rock paper scissors game with
+the user input
+
+
+Slackbot commands
+=> play rps : Enables the game to be played
+=> rock | paper | scissors : any of these words if the game
+                             is not enabled will prompt the
+                             user to give the command to iRobot
+                             to enable the game
+=> rock | paper | scissors : any of these words will make
+                             iRobot to respond to user input
+                            and play the game storing the
+                            results and calculating the best of
+                            100 points
+
+
+Approach taken
+all the information about the points and type of hands
+have been stored in an object. Functions have been
+created to enable the robot to calculate the winning hand
+
+Limitations
+The game has not been extensively tested so the behavior
+when enabling the game twice can make it unstable.
+There is no command to stop the game at any time, so
+if the user abandons the game, maybe the robot will keep
+the data stored and and whenever the user types the words
+rock, paper or scissors iRobot will keep counting the values
+until the game reaches 100 points and stops.
+
+
+
+File tictactoe.js
+*******************************
+
+Functionality
+iRobot can play the popular tictactoe game with the user
+generating the grid with the used slots and a list of
+available moves for the user to keep prompting
+
+Slackbot commands
+
+=> stop game ttt: Stops the game and all its stored information
+=> play games: indicates all the games that the robot can play
+              and describe the way to start them
+
+=> play "letter": makes the robot to fill the tictactoe grid
+                  with the user symbol/icon and once used
+                  the slot, it is removed from the list of
+                  available slots for playing
+
+=> play ttt: starts the game and generates a description of
+              how to play it.
+
+
+Limitations
+The game has been extensively tested for start and stop
+of the game at any point in time, response to different user inputs
+and some safe fail measures (console.log commands) in
+order to investigate the behavior of the Functions.
+There may be still some logics to write or some
+refactoring to do. Overall the game is playable and enjoyable.
+
+
+
+
+##############################################
+
+
+
+
 # irobot
 
 irobot is a chat bot built on the [Hubot][hubot] framework. It was
